@@ -8,8 +8,8 @@ android {
         multiDexEnabled true
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 3
-        versionName "1.0.3"
+        versionCode 4
+        versionName "1.0.4"
     }
     buildTypes {
         release {
@@ -19,18 +19,15 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    api 'com.noveogroup.android:android-logger:1.3.6'
-    api 'com.parse.bolts:bolts-android:1.1.2'
     compile files('libs/commons-lang3-3.0.jar')
     compile files('libs/commons-collections4-4.0.jar')
-    api group: 'commons-io', name: 'commons-io', version: '2.6'
+    compile files('libs/commons-io-2.6.jar')
 }
 
 publish {
     groupId = 'com.github.pro100svitlo'
     artifactId = 'creditCardNfcReader'
-    publishVersion = '1.0.3'
+    publishVersion = '1.0.4'
     desc = 'Library that help developer to get data from credit card with NFC'
     licences = ['MIT']
     website = 'https://github.com/pro100svitlo/Credit-Card-NFC-Reader'

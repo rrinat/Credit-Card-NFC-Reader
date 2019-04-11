@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.devnied.bitlib.BytesUtils;
 
 /**
  * List of utils methods to manipulate TLV

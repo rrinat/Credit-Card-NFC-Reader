@@ -1,5 +1,6 @@
 package com.pro100svitlo.creditCardNfcReader.parser.apdu.impl;
 
+import com.pro100svitlo.creditCardNfcReader.bitlib.BitUtils;
 import com.pro100svitlo.creditCardNfcReader.iso7816emv.ITag;
 import com.pro100svitlo.creditCardNfcReader.iso7816emv.TagAndLength;
 import com.pro100svitlo.creditCardNfcReader.model.AbstractData;
@@ -7,9 +8,8 @@ import com.pro100svitlo.creditCardNfcReader.parser.apdu.IFile;
 import com.pro100svitlo.creditCardNfcReader.parser.apdu.annotation.AnnotationData;
 import com.pro100svitlo.creditCardNfcReader.parser.apdu.annotation.AnnotationUtils;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import android.util.Log;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,7 +17,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import fr.devnied.bitlib.BitUtils;
 
 /**
  * Abstract class for all object to parse
@@ -32,7 +31,7 @@ public abstract class AbstractByteBean<T> extends AbstractData implements IFile 
 	/**
 	 * Logger of the class
 	 */
-	private static final Logger LOGGER = LoggerFactory.getLogger(AbstractByteBean.class.getName());
+	private static final String LOGGER_TAG = AbstractByteBean.class.getSimpleName();
 
 	/**
 	 * Method to get the annotation set from the current class
@@ -99,9 +98,9 @@ public abstract class AbstractByteBean<T> extends AbstractData implements IFile 
 			try {
 				field.set(pData, pValue);
 			} catch (IllegalArgumentException e) {
-				LOGGER.error("Parameters of fied.set are not valid", e);
+				Log.e(LOGGER_TAG, "Parameters of fied.set are not valid", e);
 			} catch (IllegalAccessException e) {
-				LOGGER.error("Impossible to set the Field :" + field.getName(), e);
+				Log.e(LOGGER_TAG, "Impossible to set the Field :" + field.getName(), e);
 			}
 		}
 	}

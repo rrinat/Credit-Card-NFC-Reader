@@ -1,5 +1,6 @@
 package com.pro100svitlo.creditCardNfcReader.model;
 
+import com.pro100svitlo.creditCardNfcReader.bitlib.BitUtils;
 import com.pro100svitlo.creditCardNfcReader.utils.BytesUtils;
 import com.pro100svitlo.creditCardNfcReader.model.enums.ServiceCode1Enum;
 import com.pro100svitlo.creditCardNfcReader.model.enums.ServiceCode2Enum;
@@ -8,7 +9,6 @@ import com.pro100svitlo.creditCardNfcReader.utils.EnumUtils;
 
 import org.apache.commons.lang3.StringUtils;
 
-import fr.devnied.bitlib.BitUtils;
 
 /**
  * Track 2 service
